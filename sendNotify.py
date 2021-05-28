@@ -13,7 +13,7 @@ class sendNotify:
     # =======================================微信server酱通知设置区域===========================================
     # 此处填你申请的SCKEY.
     # 注：此处设置github action用户填写到Settings-Secrets里面(Name输入PUSH_KEY)
-    SCKEY = readSecret("PUSH_KEY")
+    SCKEY = readSecret("SCT41625TFZXGvom8PGla9all8eSnca2u")
 
     # =======================================QQ酷推通知设置区域===========================================
     # 此处填你申请的SKEY(具体详见文档 https://cp.xuthus.cc/)
@@ -74,7 +74,7 @@ class sendNotify:
 
     def serverNotify(self, text, desp):
         if self.SCKEY != '':
-            url = 'https://sc.ftqq.com/' + self.SCKEY + '.send'
+            url = 'https://sctapi.ftqq.com/SCT41625TFZXGvom8PGla9all8eSnca2u.send?title=messagetitle' + self.SCKEY + '.send'
             response = json.dumps(requests.post(
                 url, data={'text': text, 'desp': desp}).json(), ensure_ascii=False)
             data = json.loads(response)
